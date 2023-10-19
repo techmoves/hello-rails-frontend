@@ -1,20 +1,21 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+// import greetingSlice from "../redux/greetings/greetingSlice.js";
 
 export const fetchGreeting = createAsyncThunk(
-  "message/fetchGreeting",
+  'message/fetchGreeting',
   async () => {
     const response = await axios.get(
-      "http://localhost:4000/api/greetings/random"
+      'http://localhost:4000/api/greetings/random',
     );
     return response.data;
-  }
+  },
 );
 
 const greetingSlice = createSlice({
-  name: "greeting",
+  name: 'greeting',
   initialState: {
-    text: "",
+    text: '',
   },
   reducers: {},
   extraReducers(builder) {
