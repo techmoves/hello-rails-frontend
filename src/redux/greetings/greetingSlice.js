@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import greetingSlice from "../redux/greetings/greetingSlice.js";
 
 export const fetchGreeting = createAsyncThunk(
   'message/fetchGreeting',
   async () => {
     const response = await axios.get(
-      'http://localhost:4000/api/greetings/random',
+      'http://127.0.0.1:3000/random_greeting',
     );
     return response.data;
   },
